@@ -9,7 +9,7 @@
  As a digital LED strip, each addressable LED has an integrated driver that allows the brightness and color of each LED to be controlled individually, 
  that is, an LED can be of both a different color and brightness to the one next to it. This enables us to create beautiful and complex lighting effects.
 
-The Library masters SHT4x is the full function driver of the ws2812b neopixel GRB series. The driver is writte C language with Code Blocks, It provides the functions to control The RGB.
+The Library masters ws2812b is the full function driver of the ws2812b neopixel GRB series. The driver is writte C language with Code Blocks, It provides the functions to control The RGB.
 
 ### Table of Cnntents
 
