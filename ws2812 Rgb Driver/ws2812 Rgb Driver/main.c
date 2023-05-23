@@ -30,8 +30,9 @@ int main()
     ws2812b_interface_debug_print("Temperature Max: \t%.1fC\n\r", ws2812bInfo.temperature_max);
     ws2812b_interface_debug_print("Diver Version: \t\tV%.1f.%.2d\r\n", (ws2812bInfo.driver_version / 1000), (uint8_t)(ws2812bInfo.driver_version - (uint8_t)(ws2812bInfo.driver_version / 100)*100));
 
-    ws2812b_basic_customized_colour(NUMBER_LED, (uint8_t *)colourArray);                  /**< write custom colour on 24 led */
-    //rgb_toggle(2, 500,  WS2812B_COLOUR_GREEN);                                            /**< toggle 2 LEDs green*/
+    //ws2812b_basic_write(1, WS2812B_COLOUR_BLUE);
+//    ws2812b_basic_customized_colour(NUMBER_LED, (uint8_t *)colourArray);                 /**< write custom colour on 24 led */
+    //rgb_toggle(2, 500,  WS2812B_COLOUR_GREEN);                                          /**< toggle 2 LEDs green*/
 
         for(colourIndex = 0; colourIndex < sizeof(basic_colour_array); colourIndex++){
            for(ledIndex = 1; ledIndex < NUMBER_LED+1; ledIndex++){
