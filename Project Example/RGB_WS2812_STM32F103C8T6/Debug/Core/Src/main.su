@@ -1,0 +1,9 @@
+../Core/Src/main.c:72:5:main	120	static
+../Core/Src/main.c:180:6:SystemClock_Config	88	static
+../Core/Src/main.c:227:13:MX_TIM2_Init	32	static
+../Core/Src/main.c:272:13:MX_GPIO_Init	40	static
+../Core/Src/main.c:295:6:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/Src/main.c:303:10:millis	4	static
+../Core/Src/main.c:318:9:non_blocking_task2	32	static
+../Core/Src/main.c:327:6:rgb_blink	16	static
+../Core/Src/main.c:343:6:Error_Handler	4	static,ignoring_inline_asm

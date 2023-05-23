@@ -1,0 +1,6 @@
+../Core/Src/driver_ina219_interface_template.c:46:9:ina219_interface_iic_init	4	static
+../Core/Src/driver_ina219_interface_template.c:58:9:ina219_interface_iic_deinit	4	static
+../Core/Src/driver_ina219_interface_template.c:74:9:ina219_interface_iic_read	16	static
+../Core/Src/driver_ina219_interface_template.c:90:9:ina219_interface_iic_write	16	static
+../Core/Src/driver_ina219_interface_template.c:100:6:ina219_interface_delay_ms	16	static
+../Core/Src/driver_ina219_interface_template.c:110:6:ina219_interface_debug_print	4	static

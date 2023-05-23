@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1663756800 source:e:\project code\library master\ws2812_neopixel_rgb\ws2812 rgb driver\ws2812 rgb driver\main.c
+	"ws2812B_driver_basic.h"
+
+1663753441 source:e:\project code\library master\ws2812_neopixel_rgb\ws2812 rgb driver\ws2812 rgb driver\ws2812b_driver.c
+	"ws2812b_driver.h"
+
+1663752008 e:\project code\library master\ws2812_neopixel_rgb\ws2812 rgb driver\ws2812 rgb driver\ws2812b_driver.h
+	<stdio.h>
+	<stdint.h>
+	<string.h>
+	<stdbool.h>
+
+1663749876 source:e:\project code\library master\ws2812_neopixel_rgb\ws2812 rgb driver\ws2812 rgb driver\ws2812b_driver_basic.c
+	"ws2812B_driver_basic.h"
+
+1663750146 e:\project code\library master\ws2812_neopixel_rgb\ws2812 rgb driver\ws2812 rgb driver\ws2812b_driver_basic.h
+	"ws2812b_drive_interface.h"
+
+1663596249 e:\project code\library master\ws2812_neopixel_rgb\ws2812 rgb driver\ws2812 rgb driver\ws2812b_drive_interface.h
+	"ws2812b_driver.h"
+
+1663752094 source:e:\project code\library master\ws2812_neopixel_rgb\ws2812 rgb driver\ws2812 rgb driver\ws2812b_driver_interface.c
+	"ws2812b_drive_interface.h"
+	<stdarg.h>
+

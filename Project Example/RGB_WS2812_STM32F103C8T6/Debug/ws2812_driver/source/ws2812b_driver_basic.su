@@ -1,0 +1,4 @@
+../ws2812_driver/source/ws2812b_driver_basic.c:19:9:ws2812b_basic_initialize	24	static
+../ws2812_driver/source/ws2812b_driver_basic.c:58:9:ws2812b_basic_write	24	static
+../ws2812_driver/source/ws2812b_driver_basic.c:81:9:ws2812b_basic_customized_color	24	static
+../ws2812_driver/source/ws2812b_driver_basic.c:103:9:ws2812b_basic_clear	24	static
