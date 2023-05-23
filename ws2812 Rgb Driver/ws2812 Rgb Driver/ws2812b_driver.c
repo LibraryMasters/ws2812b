@@ -37,7 +37,7 @@
 #define MAX_CURRENT               60.0f                      /**< chip max current (mA)*/
 #define TEMPERATURE_MIN           -25                        /**< chip min operating temperature (°C) */
 #define TEMPERATURE_MAX           80.0f                      /**< chip max operating temperature (°C) */
-#define DRIVER_VERSION            1200                       /**< driver version */
+#define DRIVER_VERSION            1201                       /**< driver version */
 
 /**
  * @brief     initialize the chip

@@ -94,7 +94,7 @@ uint16_t ws2812b_interface_debug_print(char *fmt, ...)
 
     len = strlen((char *) str);
 //    EUSART1_Write_Text((const char *) str, len);
-    (void)printf((uint8_t *)str, len);
+    // (void)printf((uint8_t *)str, len);
 
     /*user code end*/
 #endif
