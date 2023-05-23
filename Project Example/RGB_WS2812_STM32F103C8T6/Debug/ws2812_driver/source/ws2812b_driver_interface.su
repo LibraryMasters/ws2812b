@@ -1,4 +1,4 @@
-../ws2812_driver/source/ws2812b_driver_interface.c:18:6:ws2812b_interface_write_zero_instruction	16	static,ignoring_inline_asm
-../ws2812_driver/source/ws2812b_driver_interface.c:68:6:ws2812b_interface_write_one_instruction	16	static,ignoring_inline_asm
-../ws2812_driver/source/ws2812b_driver_interface.c:117:6:ws2812b_interface_delay_ms	16	static
-../ws2812_driver/source/ws2812b_driver_interface.c:127:10:ws2812b_interface_debug_print	272	static
+../ws2812_driver/source/ws2812b_driver_interface.c:39:6:ws2812b_interface_write_zero_instruction	16	static
+../ws2812_driver/source/ws2812b_driver_interface.c:54:6:ws2812b_interface_write_one_instruction	16	static
+../ws2812_driver/source/ws2812b_driver_interface.c:67:6:ws2812b_interface_delay_ms	16	static
+../ws2812_driver/source/ws2812b_driver_interface.c:81:10:ws2812b_interface_debug_print	272	static

@@ -54,15 +54,26 @@ static void MX_TIM2_Init(void);
 uint8_t non_blocking_task2(void (*task)(int), uint32_t timeout, uint32_t tickCheck, int Parameter);
 uint32_t millis(void);
 void rgb_blink(int arg);
+void rgb_toggle(uint8_t u8LedCount, uint32_t u32Time, ws2812b_basic_colour_t colour);
+int colourIndex, ledIndex;
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 #define  DEBUG_MODE
+#define NUMBER_LED      24
 const uint8_t colorArray[3] = {128, 52, 128};  /*Red, Green, blue*/
 uint32_t tickCount;
 uint32_t blinkCheck_blue;
 bool rgb_status;
+ws2812b_basic_colour_t basic_colour_array[7] = {    WS2812B_COLOUR_RED,
+                                                    WS2812B_COLOUR_GREEN,
+                                                    WS2812B_COLOUR_BLUE,
+                                                    WS2812B_COLOUR_YELLOW,
+                                                    WS2812B_COLOUR_MAGENTA,
+                                                    WS2812B_COLOUR_CYAN,
+                                                    WS2812B_COLOUR_PURPLE
+                                               };
 /* USER CODE END 0 */
 
 /**
@@ -103,11 +114,11 @@ int main(void)
 
   	HAL_Delay(2000); /*wait for drivers to initialize correctly*/
 
-  	ws2812b_basic_initialize(NUMBER_LED);
+    ws2812b_basic_initialize(NUMBER_LED);
+    ws2812b_info(&ws2812bInfo);
 
   	#ifdef DEBUG_MODE
 
-  	ws2812b_info(&ws2812bInfo);
 
   	ws2812b_interface_debug_print("chip name: \t%s\n\r", ws2812bInfo.chip_Name);
   	ws2812b_interface_debug_print("Manufacturer: \t%s\n\r", ws2812bInfo.manufacturer_name);
@@ -115,7 +126,7 @@ int main(void)
   	ws2812b_interface_debug_print("Supply max voltage: \t%0.2fV\n\r", ws2812bInfo.supply_Voltage_max_V);
   	ws2812b_interface_debug_print("Supply min voltage: \t%0.2fV\n\r", ws2812bInfo.supply_voltage_min_v);
   	ws2812b_interface_debug_print("Temperature Max: \t%.1fC\n\r", ws2812bInfo.temperature_max);
-  	ws2812b_interface_debug_print("Driver version: \tV%.1f\n\r", (ws2812bInfo.driver_version / 1000));
+    ws2812b_interface_debug_print("Diver Version: \t\tV%.1f.%.2d\r\n", (ws2812bInfo.driver_version / 1000), (uint8_t)(ws2812bInfo.driver_version - (uint8_t)(ws2812bInfo.driver_version / 100)*100));
 
   	#endif
 
@@ -130,45 +141,16 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 //	  ws2812b_basic_write(3, WS2812b_COLOR_RED);
-//	  ws2812b_basic_customized_color(led_count, colorArray);
-	  for(int index = 1; index < NUMBER_LED+1; index++){
-		  ws2812b_interface_delay_ms(150);
-		  ws2812b_basic_write(index, WS2812b_COLOR_BLUE);
-	  }
-	  ws2812b_basic_clear(4);
-	  for(int index = 1; index < NUMBER_LED+1; index++){
-		  ws2812b_interface_delay_ms(150);
-		  ws2812b_basic_write(index, WS2812b_COLOR_GREEN);
-	  }
-	  ws2812b_basic_clear(4);
+//	    ws2812b_basic_customized_colour(NUMBER_LED, (uint8_t *)colourArray);                  /**< write custom colour on 24 led */
+//rgb_toggle(2, 500,  WS2812B_COLOUR_GREEN);                                            /**< toggle 2 LEDs green*/
 
-	  for(int index = 1; index < NUMBER_LED+1; index++){
-		  ws2812b_interface_delay_ms(150);
-		  ws2812b_basic_write(index, WS2812b_COLOR_RED);
-	  }
-	  ws2812b_basic_clear(4);
-	  for(int index = 1; index < NUMBER_LED+1; index++){
-		  ws2812b_interface_delay_ms(150);
-		  ws2812b_basic_write(index, WS2812b_COLOR_YELLOW);
-	  }
-	  ws2812b_basic_clear(4);
-
-	  for(int index = 1; index < NUMBER_LED+1; index++){
-		  ws2812b_interface_delay_ms(150);
-		  ws2812b_basic_write(index, WS2812b_COLOR_MAGENTA);
-	  }
-	  ws2812b_basic_clear(4);
-	  for(int index = 1; index < NUMBER_LED+1; index++){
-		  ws2812b_interface_delay_ms(150);
-		  ws2812b_basic_write(index, WS2812b_COLOR_CYAN);
-	  }
-	  ws2812b_basic_clear(4);
-
-	  for(int index = 1; index < NUMBER_LED+1; index++){
-		  ws2812b_interface_delay_ms(150);
-		  ws2812b_basic_write(index, WS2812b_COLOR_WHITE);
-	  }
-	  ws2812b_basic_clear(4);
+	        for(colourIndex = 0; colourIndex < sizeof(basic_colour_array); colourIndex++){
+	           for(ledIndex = 1; ledIndex < NUMBER_LED+1; ledIndex++){
+	                ws2812b_interface_delay_ms(50);
+	                ws2812b_basic_write(ledIndex, basic_colour_array[colourIndex]);              /**< loop through different colours */
+	            }
+	           ws2812b_interface_delay_ms(50);
+	        }
   }
   /* USER CODE END 3 */
 }
@@ -327,12 +309,20 @@ uint8_t non_blocking_task2(void (*task)(int), uint32_t timeout, uint32_t tickChe
 void rgb_blink(int arg){
 
     if (rgb_status)
-        ws2812b_basic_write(1, WS2812b_COLOR_CLEAR);
+        ws2812b_basic_write(1, WS2812B_COLOUR_CLEAR);
     else
         ws2812b_basic_write(1, arg);
 
     rgb_status = !rgb_status;
 	blinkCheck_blue = millis();
+}
+
+void rgb_toggle(uint8_t u8LedCount, uint32_t u32Time, ws2812b_basic_colour_t colour)
+{
+    ws2812b_basic_write(u8LedCount, colour);
+    ws2812b_interface_delay_ms(u32Time);
+    ws2812b_basic_clear(1);
+    ws2812b_interface_delay_ms(u32Time);
 }
 /* USER CODE END 4 */
 

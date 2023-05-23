@@ -1,6 +1,6 @@
-../ws2812_driver/source/ws2812b_driver.c:31:9:ws2812b_init	16	static
-../ws2812_driver/source/ws2812b_driver.c:69:6:ws2812b_write_byte	24	static
-../ws2812_driver/source/ws2812b_driver.c:138:9:ws2812b_write_basic_color	24	static
-../ws2812_driver/source/ws2812b_driver.c:219:9:ws2812b_write_color	32	static
-../ws2812_driver/source/ws2812b_driver.c:243:9:ws2812b_led_clear	24	static
-../ws2812_driver/source/ws2812b_driver.c:269:9:ws2812b_info	16	static
+../ws2812_driver/source/ws2812b_driver.c:51:9:ws2812b_init	16	static
+../ws2812_driver/source/ws2812b_driver.c:96:9:ws2812b_write_byte	24	static
+../ws2812_driver/source/ws2812b_driver.c:131:9:ws2812b_write_basic_colour	24	static
+../ws2812_driver/source/ws2812b_driver.c:213:9:ws2812b_write_colour	32	static
+../ws2812_driver/source/ws2812b_driver.c:244:9:ws2812b_led_clear	24	static
+../ws2812_driver/source/ws2812b_driver.c:271:9:ws2812b_info	16	static
