@@ -100,8 +100,8 @@ void rgb_toggle(uint8_t u8LedCount, uint32_t u32Time, ws2812b_basic_colour_t col
   ```
   
  ### Document
-  [datasheet](https://github.com/LibraryMasters/ws2812b/blob/master/Document/Datasheet/WS2812B.pdf)
-  [timing diagram](https://github.com/LibraryMasters/ws2812b/blob/master/Document/ws2812%20neopixel%20RGB%20timing%20diagram.pdf)
+  - [datasheet](https://github.com/LibraryMasters/ws2812b/blob/master/Document/Datasheet/WS2812B.pdf)
+  - [timing diagram](https://github.com/LibraryMasters/ws2812b/blob/master/Document/ws2812%20neopixel%20RGB%20timing%20diagram.pdf)
   
   ### Contribute
    1. Clone repo and create a new branch: ```https://github.com/LibraryMasters/ws2812b_PR.git```
