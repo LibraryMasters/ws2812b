@@ -37,7 +37,7 @@
 extern "C" {
 #endif
 
-#define  WS2812B_DEBUG_MODE
+#define WS2812B_DEBUG_MODE
 #define WS2812b_RESET_TIMEOUT  1U /**< wait at least 1ms to reset*/
 
 /**

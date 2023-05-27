@@ -32,24 +32,13 @@ int main(void)
 
 	#endif
 
-	ws2812b_basic_color_t basic_color_array[7] = {WS2812B_COLOUR_GREEN, WS2812B_COLOUR_BLUE, WS2812B_COLOUR_RED, WS2812B_COLOUR_YELLOW, WS2812B_COLOUR_MAGENTA, WS2812B_COLOUR_CYAN, WS2812B_COLOUR_WHITE};
+	ws2812b_basic_color_t basic_color_array[7] = {WS2812b_COLOR_GREEN, WS2812b_COLOR_BLUE, WS2812b_COLOR_RED, WS2812b_COLOR_YELLOW, WS2812b_COLOR_MAGENTA, WS2812b_COLOR_CYAN, WS2812b_COLOR_WHITE};
 
 	/* Replace with your application code */
 	while (1) {
           
-
-		  //ws2812b_basic_write(2, WS2812b_COLOUR_BLUE);                /**< write blue colour to the first 2 leds */
-	
-		  ws2812b_basic_customized_color(1, (uint8_t*)colourArray);   	/**< write cutomised color to the first led */
-		  ws2812b_interface_delay_ms(5000);                          	/**< wait 3 second */
-	    for( int colorIndex = 0; colorIndex < 7; colorIndex++){      	/**< play around with all the basic colors */
-				 
-			for(int index = 0; index < (NUMBER_LED + 1); ++index){
-				ws2812b_basic_write(index, basic_color_array[colorIndex]);
-				_delay_ms(200); 
-			 }
-			 ws2812b_basic_clear(4);
-		  }
+     LED_BUILTIN_toggle_level();
+	 _delay_ms(250);    
 	  
 	}
 	return 1; 

@@ -20,7 +20,7 @@
 extern "C" {
 #endif
 
-#define tickOffset     5  
+#define tickOffset     0  
 
 #define _1000_MS_TIMEOUT     1000
 #define _500_MS_TIMEOUT      500

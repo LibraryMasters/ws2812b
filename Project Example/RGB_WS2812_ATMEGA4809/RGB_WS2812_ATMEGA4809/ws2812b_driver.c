@@ -99,55 +99,55 @@ uint8_t ws2812b_write_basic_color(ws2812b_handle_t *handle, ws2812b_basic_color_
 
     switch (color) {
 
-        case WS2812b_COLOUR_RED:
+        case WS2812b_COLOR_RED:
             ws2812b_write_byte(handle, NULL);
             ws2812b_write_byte(handle, red);
             ws2812b_write_byte(handle, NULL);
             break;
 
-        case WS2812b_COLOUR_BLUE:
+        case WS2812b_COLOR_BLUE:
             ws2812b_write_byte(handle, NULL);
             ws2812b_write_byte(handle, NULL);
             ws2812b_write_byte(handle, blue);
             break;
 
-        case WS2812b_COLOUR_GREEN:
+        case WS2812b_COLOR_GREEN:
             ws2812b_write_byte(handle, green);
             ws2812b_write_byte(handle, NULL);
             ws2812b_write_byte(handle, NULL);
             break;
 
-        case WS2812b_COLOUR_YELLOW:
+        case WS2812b_COLOR_YELLOW:
             ws2812b_write_byte(handle, green);
             ws2812b_write_byte(handle, red);
             ws2812b_write_byte(handle, NULL);
             break;
 
-        case WS2812b_COLOUR_MAGENTA:
+        case WS2812b_COLOR_MAGENTA:
             ws2812b_write_byte(handle, NULL);
-            ws2812b_write_byte(handle, red);
-            ws2812b_write_byte(handle, blue);
-            break;
-
-        case WS2812b_COLOUR_WHITE:
-            ws2812b_write_byte(handle, green);
             ws2812b_write_byte(handle, red);
             ws2812b_write_byte(handle, blue);
             break;
 
-        case WS2812b_COLOUR_CYAN:
+        case WS2812b_COLOR_WHITE:
+            ws2812b_write_byte(handle, green);
+            ws2812b_write_byte(handle, red);
+            ws2812b_write_byte(handle, blue);
+            break;
+
+        case WS2812b_COLOR_CYAN:
             ws2812b_write_byte(handle, green);
             ws2812b_write_byte(handle, NULL);
             ws2812b_write_byte(handle, blue);
             break;
 
-        case WS2812b_COLOUR_CLEAR:
+        case WS2812b_COLOR_CLEAR:
             ws2812b_write_byte(handle, NULL);
             ws2812b_write_byte(handle, NULL);
             ws2812b_write_byte(handle, NULL);
             break;
 
-        case WS2812b_COLOUR_PURPLE:
+        case WS2812b_COLOR_PURPLE:
             ws2812b_write_byte(handle, NULL);
             ws2812b_write_byte(handle, red >> 1);
             ws2812b_write_byte(handle, blue >> 1);
@@ -203,7 +203,7 @@ uint8_t ws2812b_led_clear(ws2812b_handle_t *handle, uint8_t ledCount) {
 
     unsigned char count; /*<< number of RGB on the array*/
     for (count = 0; count < handle->nLed_count; count++)
-        ws2812b_write_basic_color(handle, WS2812b_COLOUR_CLEAR);
+        ws2812b_write_basic_color(handle, WS2812b_COLOR_CLEAR);
 
     handle->delay_ms(WS2812b_RESET_TIMEOUT);
 

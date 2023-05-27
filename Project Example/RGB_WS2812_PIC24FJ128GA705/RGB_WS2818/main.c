@@ -62,7 +62,7 @@ void led_fade(void);
 uint32_t blinkCheck_blue, rgb_toggle_check, rgb_toggle_check2;
 bool rgb_status, fullBrightness;
 
-volatile uint8_t colors[] = {0, 255, 200};
+volatile uint8_t colors[] = {255, 255, 0};
 uint8_t *ptr;
 uint8_t count;
 const uint8_t colorsArray[] = {     WS2812b_COLOR_RED,
@@ -103,15 +103,15 @@ int main(void) {
 
         led_toggle_non_blocking(&toggle_led_blue, _500_MS_TIMEOUT, blinkCheck_blue);
 //        non_blocking_task2(&rgb_toggle, _1000_MS_TIMEOUT, rgb_toggle_check, WS2812b_COLOR_GREEN);
-//        ws2812b_basic_customized_color(5, colors);
+        ws2812b_basic_customized_color(1, colors);
         
-        for(int colorIndex = 0; colorIndex < sizeof(colorsArray); colorIndex++){
-           for(int index = 1; index < NUMBER_LED+1; index++){
-                ws2812b_interface_delay_ms(50);
-                ws2812b_basic_write(index, colorsArray[colorIndex]);
-            }
-           ws2812b_interface_delay_ms(50);
-        }
+//        for(int colorIndex = 0; colorIndex < sizeof(colorsArray); colorIndex++){
+//           for(int index = 1; index < NUMBER_LED+1; index++){
+//                ws2812b_interface_delay_ms(50);
+//                ws2812b_basic_write(index, colorsArray[colorIndex]);
+//            }
+//           ws2812b_interface_delay_ms(50);
+//        }
 
     }
 
