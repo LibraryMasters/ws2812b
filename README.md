@@ -9,7 +9,7 @@
  As a digital LED strip, each addressable LED has an integrated driver that allows the brightness and color of each LED to be controlled individually, 
  that is, an LED can be of both a different color and brightness to the one next to it. This enables us to create beautiful and complex lighting effects.
 
-The Library masters SHT4x is the full function driver of the ws2812b neopixel GRB series. The driver is writte C language with Code Blocks, It provides the functions to control The RGB.
+The Library masters ws2812b is the full function driver of the ws2812b neopixel GRB series. The driver is writte C language with Code Blocks, It provides the functions to control The RGB.
 
 ### Table of Cnntents
 
@@ -76,9 +76,9 @@ int main()
     ws2812b_interface_debug_print("Temperature Max: \t%.1fC\n\r", ws2812bInfo.temperature_max);
     ws2812b_interface_debug_print("Diver Version: \t\tV%.1f.%.2d\r\n", (ws2812bInfo.driver_version / 1000), (uint8_t)(ws2812bInfo.driver_version - (uint8_t)(ws2812bInfo.driver_version / 100)*100));
 
-    //ws2812b_basic_write(1, WS2812B_COLOUR_BLUE);
-//    ws2812b_basic_customized_colour(NUMBER_LED, (uint8_t *)colourArray);                 /**< write custom colour on 24 led */
-    //rgb_toggle(2, 500,  WS2812B_COLOUR_GREEN);                                          /**< toggle 2 LEDs green*/
+    // ws2812b_basic_write(1, WS2812B_COLOUR_BLUE);
+    // ws2812b_basic_customized_colour(NUMBER_LED, (uint8_t *)colourArray);                 /**< write custom colour on 24 led */
+    // rgb_toggle(2, 500,  WS2812B_COLOUR_GREEN);                                          /**< toggle 2 LEDs green*/
 
         for(colourIndex = 0; colourIndex < sizeof(basic_colour_array); colourIndex++){
            for(ledIndex = 1; ledIndex < NUMBER_LED+1; ledIndex++){
@@ -100,8 +100,8 @@ void rgb_toggle(uint8_t u8LedCount, uint32_t u32Time, ws2812b_basic_colour_t col
   ```
   
  ### Document
-  [datasheet](https://github.com/LibraryMasters/ws2812b/blob/master/Document/Datasheet/WS2812B.pdf)
-  [timing diagram](https://github.com/LibraryMasters/ws2812b/blob/master/Document/ws2812%20neopixel%20RGB%20timing%20diagram.pdf)
+  - [Datasheet](https://github.com/LibraryMasters/ws2812b/blob/master/Document/Datasheet/WS2812B.pdf)
+  - [Timing Diagram](https://github.com/LibraryMasters/ws2812b/blob/master/Document/ws2812%20neopixel%20RGB%20timing%20diagram.pdf)
   
   ### Contribute
    1. Clone repo and create a new branch: ```https://github.com/LibraryMasters/ws2812b_PR.git```
