@@ -73,8 +73,7 @@ Discarded input sections
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
- .rodata.colourArray
-                0x00000000        0x3 main.o
+ .rodata.color  0x00000000        0x3 main.o
  .text          0x00000000        0x0 src/bod.o
  .data          0x00000000        0x0 src/bod.o
  .bss           0x00000000        0x0 src/bod.o
@@ -129,8 +128,6 @@ Discarded input sections
  .text          0x00000000        0x0 ws2812b_driver_basic.o
  .data          0x00000000        0x0 ws2812b_driver_basic.o
  .bss           0x00000000        0x0 ws2812b_driver_basic.o
- .text.ws2812b_basic_write
-                0x00000000       0x4e ws2812b_driver_basic.o
  .text.ws2812b_basic_customized_color
                 0x00000000       0x30 ws2812b_driver_basic.o
  .text          0x00000000        0x0 ws2812b_driver_interface.o
@@ -411,7 +408,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x12aa
+.text           0x00000000     0x1350
  *(.vectors)
  .vectors       0x00000000       0xa0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega4809/avrxmega3/crtatmega4809.o
                 0x00000000                __vector_default
@@ -521,114 +518,117 @@ END GROUP
  .text.__vector_9
                 0x000001f8       0x1e driver_isr.o
                 0x000001f8                __vector_9
- .text.main     0x00000216       0x36 main.o
+ .text.main     0x00000216       0x8e main.o
                 0x00000216                main
  .text.BOD_init
-                0x0000024c        0x4 src/bod.o
-                0x0000024c                BOD_init
+                0x000002a4        0x4 src/bod.o
+                0x000002a4                BOD_init
  .text.CLKCTRL_init
-                0x00000250       0x10 src/clkctrl.o
-                0x00000250                CLKCTRL_init
+                0x000002a8       0x10 src/clkctrl.o
+                0x000002a8                CLKCTRL_init
  .text.CPUINT_init
-                0x00000260        0x4 src/cpuint.o
-                0x00000260                CPUINT_init
+                0x000002b8        0x4 src/cpuint.o
+                0x000002b8                CPUINT_init
  .text.mcu_init
-                0x00000264       0x92 src/driver_init.o
-                0x00000264                mcu_init
+                0x000002bc       0x92 src/driver_init.o
+                0x000002bc                mcu_init
  .text.USART_0_initialization
-                0x000002f6       0x22 src/driver_init.o
-                0x000002f6                USART_0_initialization
+                0x0000034e       0x22 src/driver_init.o
+                0x0000034e                USART_0_initialization
  .text.TIMER_0_initialization
-                0x00000318        0x6 src/driver_init.o
-                0x00000318                TIMER_0_initialization
+                0x00000370        0x6 src/driver_init.o
+                0x00000370                TIMER_0_initialization
  .text.system_init
-                0x0000031e       0x36 src/driver_init.o
-                0x0000031e                system_init
+                0x00000376       0x36 src/driver_init.o
+                0x00000376                system_init
  .text.protected_write_io
-                0x00000354        0x8 src/protected_io.o
-                0x00000354                protected_write_io
+                0x000003ac        0x8 src/protected_io.o
+                0x000003ac                protected_write_io
  .text.SLPCTRL_init
-                0x0000035c        0x4 src/slpctrl.o
-                0x0000035c                SLPCTRL_init
+                0x000003b4        0x4 src/slpctrl.o
+                0x000003b4                SLPCTRL_init
  .text.TIMER_0_init
-                0x00000360       0x10 src/tca.o
-                0x00000360                TIMER_0_init
+                0x000003b8       0x10 src/tca.o
+                0x000003b8                TIMER_0_init
  .text.USART_0_init
-                0x00000370       0x20 src/usart_basic.o
-                0x00000370                USART_0_init
+                0x000003c8       0x20 src/usart_basic.o
+                0x000003c8                USART_0_init
  .text.USART_0_write
-                0x00000390        0xe src/usart_basic.o
-                0x00000390                USART_0_write
+                0x000003e8        0xe src/usart_basic.o
+                0x000003e8                USART_0_write
  .text.USART_0_printCHAR
-                0x0000039e        0xa src/usart_basic.o
-                0x0000039e                USART_0_printCHAR
+                0x000003f6        0xa src/usart_basic.o
+                0x000003f6                USART_0_printCHAR
  .text.USART0_Write_Text
-                0x000003a8       0x26 src/usart_basic.o
-                0x000003a8                USART0_Write_Text
+                0x00000400       0x26 src/usart_basic.o
+                0x00000400                USART0_Write_Text
  .text.ws2812b_init
-                0x000003ce       0x7c ws2812b_driver.o
-                0x000003ce                ws2812b_init
+                0x00000426       0x7c ws2812b_driver.o
+                0x00000426                ws2812b_init
  .text.ws2812b_write_byte
-                0x0000044a       0x52 ws2812b_driver.o
-                0x0000044a                ws2812b_write_byte
+                0x000004a2       0x52 ws2812b_driver.o
+                0x000004a2                ws2812b_write_byte
  .text.ws2812b_write_basic_color
-                0x0000049c      0x126 ws2812b_driver.o
-                0x0000049c                ws2812b_write_basic_color
+                0x000004f4      0x126 ws2812b_driver.o
+                0x000004f4                ws2812b_write_basic_color
  .text.ws2812b_led_clear
-                0x000005c2       0x56 ws2812b_driver.o
-                0x000005c2                ws2812b_led_clear
+                0x0000061a       0x56 ws2812b_driver.o
+                0x0000061a                ws2812b_led_clear
+ .text.ws2812b_basic_write
+                0x00000670       0x4e ws2812b_driver_basic.o
+                0x00000670                ws2812b_basic_write
  .text.ws2812b_basic_clear
-                0x00000618       0x22 ws2812b_driver_basic.o
-                0x00000618                ws2812b_basic_clear
+                0x000006be       0x22 ws2812b_driver_basic.o
+                0x000006be                ws2812b_basic_clear
  .text.ws2812b_basic_initialize
-                0x0000063a       0x78 ws2812b_driver_basic.o
-                0x0000063a                ws2812b_basic_initialize
+                0x000006e0       0x78 ws2812b_driver_basic.o
+                0x000006e0                ws2812b_basic_initialize
  .text.ws2812b_interface_write_zero_instruction
-                0x000006b2       0x2e ws2812b_driver_interface.o
-                0x000006b2                ws2812b_interface_write_zero_instruction
+                0x00000758       0x2e ws2812b_driver_interface.o
+                0x00000758                ws2812b_interface_write_zero_instruction
  .text.ws2812b_interface_write_one_instruction
-                0x000006e0       0x32 ws2812b_driver_interface.o
-                0x000006e0                ws2812b_interface_write_one_instruction
+                0x00000786       0x32 ws2812b_driver_interface.o
+                0x00000786                ws2812b_interface_write_one_instruction
  .text.ws2812b_interface_delay_ms
-                0x00000712       0x30 ws2812b_driver_interface.o
-                0x00000712                ws2812b_interface_delay_ms
+                0x000007b8       0x30 ws2812b_driver_interface.o
+                0x000007b8                ws2812b_interface_delay_ms
  .text.ws2812b_interface_debug_print
-                0x00000742       0x94 ws2812b_driver_interface.o
-                0x00000742                ws2812b_interface_debug_print
+                0x000007e8       0x94 ws2812b_driver_interface.o
+                0x000007e8                ws2812b_interface_debug_print
  .text.avr-libc
-                0x000007d6      0x6fa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libprintf_flt.a(vfprintf_flt.o)
-                0x000007d6                vfprintf
- .text.libgcc   0x00000ed0        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_tablejump2.o)
-                0x00000ed0                __tablejump2__
+                0x0000087c      0x6fa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libprintf_flt.a(vfprintf_flt.o)
+                0x0000087c                vfprintf
+ .text.libgcc   0x00000f76        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_tablejump2.o)
+                0x00000f76                __tablejump2__
  .text.libgcc.prologue
-                0x00000edc       0x32 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_prologue.o)
-                0x00000edc                __prologue_saves__
+                0x00000f82       0x32 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_prologue.o)
+                0x00000f82                __prologue_saves__
  .text.libgcc.prologue
-                0x00000f0e       0x30 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_epilogue.o)
-                0x00000f0e                __epilogue_restores__
+                0x00000fb4       0x30 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_epilogue.o)
+                0x00000fb4                __epilogue_restores__
  .text.avr-libc
-                0x00000f3e      0x1b0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(ftoa_engine.o)
-                0x00000f3e                __ftoa_engine
+                0x00000fe4      0x1b0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(ftoa_engine.o)
+                0x00000fe4                __ftoa_engine
  .text.avr-libc
-                0x000010ee       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(strnlen_P.o)
-                0x000010ee                strnlen_P
+                0x00001194       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(strnlen_P.o)
+                0x00001194                strnlen_P
  .text.avr-libc
-                0x00001104       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(strnlen.o)
-                0x00001104                strnlen
+                0x000011aa       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(strnlen.o)
+                0x000011aa                strnlen
  .text.avr-libc
-                0x0000111a       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(fputc.o)
-                0x0000111a                fputc
+                0x000011c0       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(fputc.o)
+                0x000011c0                fputc
  .text.avr-libc
-                0x00001192       0x58 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(vsnprintf.o)
-                0x00001192                vsnprintf
+                0x00001238       0x58 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(vsnprintf.o)
+                0x00001238                vsnprintf
  .text.avr-libc
-                0x000011ea       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(ultoa_invert.o)
-                0x000011ea                __ultoa_invert
-                0x000012a6                . = ALIGN (0x2)
+                0x00001290       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(ultoa_invert.o)
+                0x00001290                __ultoa_invert
+                0x0000134c                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000012a6        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
-                0x000012a6                _exit
-                0x000012a6                exit
+ .fini9         0x0000134c        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+                0x0000134c                _exit
+                0x0000134c                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -647,18 +647,19 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000012a6        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .fini0         0x0000134c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
  *(.fini0)
-                0x000012aa                _etext = .
+                0x00001350                _etext = .
 
-.rodata         0x000052aa       0x8e load address 0x000012aa
+.rodata         0x00005350       0x96 load address 0x00001350
  *(.rodata)
+ .rodata        0x00005350        0x8 main.o
  *(.rodata*)
  .rodata.str1.1
-                0x000052aa       0x8e ws2812b_driver.o
+                0x00005358       0x8e ws2812b_driver.o
  *(.gnu.linkonce.r*)
 
-.data           0x00802800        0xe load address 0x00001338
+.data           0x00802800        0xe load address 0x000013e6
                 0x00802800                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -680,8 +681,8 @@ END GROUP
  COMMON         0x0080281d        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(iob.o)
                 0x0080281d                __iob
                 0x00802823                PROVIDE (__bss_end, .)
-                0x00001338                __data_load_start = LOADADDR (.data)
-                0x00001346                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000013e6                __data_load_start = LOADADDR (.data)
+                0x000013f4                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00802823        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -803,117 +804,117 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x5bec
+.debug_info     0x00000000     0x5b9e
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x248a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega4809/avrxmega3/crtatmega4809.o
  .debug_info    0x0000248a       0x9a atmel_start.o
  .debug_info    0x00002524      0x707 driver_isr.o
- .debug_info    0x00002c2b      0x467 main.o
- .debug_info    0x00003092       0x8d src/bod.o
- .debug_info    0x0000311f      0x2b5 src/clkctrl.o
- .debug_info    0x000033d4       0x8d src/cpuint.o
- .debug_info    0x00003461      0x858 src/driver_init.o
- .debug_info    0x00003cb9       0x8d src/protected_io.o
- .debug_info    0x00003d46      0x14b src/slpctrl.o
- .debug_info    0x00003e91      0x770 src/tca.o
- .debug_info    0x00004601      0x4d1 src/usart_basic.o
- .debug_info    0x00004ad2      0x804 ws2812b_driver.o
- .debug_info    0x000052d6      0x3fe ws2812b_driver_basic.o
- .debug_info    0x000056d4      0x518 ws2812b_driver_interface.o
+ .debug_info    0x00002c2b      0x419 main.o
+ .debug_info    0x00003044       0x8d src/bod.o
+ .debug_info    0x000030d1      0x2b5 src/clkctrl.o
+ .debug_info    0x00003386       0x8d src/cpuint.o
+ .debug_info    0x00003413      0x858 src/driver_init.o
+ .debug_info    0x00003c6b       0x8d src/protected_io.o
+ .debug_info    0x00003cf8      0x14b src/slpctrl.o
+ .debug_info    0x00003e43      0x770 src/tca.o
+ .debug_info    0x000045b3      0x4d1 src/usart_basic.o
+ .debug_info    0x00004a84      0x804 ws2812b_driver.o
+ .debug_info    0x00005288      0x3fe ws2812b_driver_basic.o
+ .debug_info    0x00005686      0x518 ws2812b_driver_interface.o
 
-.debug_abbrev   0x00000000     0x32e7
+.debug_abbrev   0x00000000     0x3290
  *(.debug_abbrev)
  .debug_abbrev  0x00000000     0x2296 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega4809/avrxmega3/crtatmega4809.o
  .debug_abbrev  0x00002296       0x63 atmel_start.o
  .debug_abbrev  0x000022f9       0xf9 driver_isr.o
- .debug_abbrev  0x000023f2      0x21a main.o
- .debug_abbrev  0x0000260c       0x51 src/bod.o
- .debug_abbrev  0x0000265d      0x117 src/clkctrl.o
- .debug_abbrev  0x00002774       0x51 src/cpuint.o
- .debug_abbrev  0x000027c5      0x1c3 src/driver_init.o
- .debug_abbrev  0x00002988       0x14 src/protected_io.o
- .debug_abbrev  0x0000299c       0xd6 src/slpctrl.o
- .debug_abbrev  0x00002a72      0x102 src/tca.o
- .debug_abbrev  0x00002b74      0x21c src/usart_basic.o
- .debug_abbrev  0x00002d90      0x1a3 ws2812b_driver.o
- .debug_abbrev  0x00002f33      0x125 ws2812b_driver_basic.o
- .debug_abbrev  0x00003058      0x28f ws2812b_driver_interface.o
+ .debug_abbrev  0x000023f2      0x1c3 main.o
+ .debug_abbrev  0x000025b5       0x51 src/bod.o
+ .debug_abbrev  0x00002606      0x117 src/clkctrl.o
+ .debug_abbrev  0x0000271d       0x51 src/cpuint.o
+ .debug_abbrev  0x0000276e      0x1c3 src/driver_init.o
+ .debug_abbrev  0x00002931       0x14 src/protected_io.o
+ .debug_abbrev  0x00002945       0xd6 src/slpctrl.o
+ .debug_abbrev  0x00002a1b      0x102 src/tca.o
+ .debug_abbrev  0x00002b1d      0x21c src/usart_basic.o
+ .debug_abbrev  0x00002d39      0x1a3 ws2812b_driver.o
+ .debug_abbrev  0x00002edc      0x125 ws2812b_driver_basic.o
+ .debug_abbrev  0x00003001      0x28f ws2812b_driver_interface.o
 
-.debug_line     0x00000000     0x1909
+.debug_line     0x00000000     0x18b9
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x187 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega4809/avrxmega3/crtatmega4809.o
  .debug_line    0x00000187       0x60 atmel_start.o
  .debug_line    0x000001e7      0x10d driver_isr.o
- .debug_line    0x000002f4      0x21d main.o
- .debug_line    0x00000511       0xa2 src/bod.o
- .debug_line    0x000005b3      0x136 src/clkctrl.o
- .debug_line    0x000006e9       0xa5 src/cpuint.o
- .debug_line    0x0000078e      0x2fd src/driver_init.o
- .debug_line    0x00000a8b       0x55 src/protected_io.o
- .debug_line    0x00000ae0      0x11c src/slpctrl.o
- .debug_line    0x00000bfc      0x10e src/tca.o
- .debug_line    0x00000d0a      0x2a3 src/usart_basic.o
- .debug_line    0x00000fad      0x3d0 ws2812b_driver.o
- .debug_line    0x0000137d      0x1ca ws2812b_driver_basic.o
- .debug_line    0x00001547      0x3c2 ws2812b_driver_interface.o
+ .debug_line    0x000002f4      0x1cd main.o
+ .debug_line    0x000004c1       0xa2 src/bod.o
+ .debug_line    0x00000563      0x136 src/clkctrl.o
+ .debug_line    0x00000699       0xa5 src/cpuint.o
+ .debug_line    0x0000073e      0x2fd src/driver_init.o
+ .debug_line    0x00000a3b       0x55 src/protected_io.o
+ .debug_line    0x00000a90      0x11c src/slpctrl.o
+ .debug_line    0x00000bac      0x10e src/tca.o
+ .debug_line    0x00000cba      0x2a3 src/usart_basic.o
+ .debug_line    0x00000f5d      0x3d0 ws2812b_driver.o
+ .debug_line    0x0000132d      0x1ca ws2812b_driver_basic.o
+ .debug_line    0x000014f7      0x3c2 ws2812b_driver_interface.o
 
-.debug_frame    0x00000000      0x494
+.debug_frame    0x00000000      0x4a4
  *(.debug_frame)
  .debug_frame   0x00000000       0x24 atmel_start.o
  .debug_frame   0x00000024       0x34 driver_isr.o
- .debug_frame   0x00000058       0x24 main.o
- .debug_frame   0x0000007c       0x24 src/bod.o
- .debug_frame   0x000000a0       0x24 src/clkctrl.o
- .debug_frame   0x000000c4       0x24 src/cpuint.o
- .debug_frame   0x000000e8       0x54 src/driver_init.o
- .debug_frame   0x0000013c       0x34 src/slpctrl.o
- .debug_frame   0x00000170       0x24 src/tca.o
- .debug_frame   0x00000194       0xe4 src/usart_basic.o
- .debug_frame   0x00000278       0xf8 ws2812b_driver.o
- .debug_frame   0x00000370       0xa8 ws2812b_driver_basic.o
- .debug_frame   0x00000418       0x7c ws2812b_driver_interface.o
+ .debug_frame   0x00000058       0x34 main.o
+ .debug_frame   0x0000008c       0x24 src/bod.o
+ .debug_frame   0x000000b0       0x24 src/clkctrl.o
+ .debug_frame   0x000000d4       0x24 src/cpuint.o
+ .debug_frame   0x000000f8       0x54 src/driver_init.o
+ .debug_frame   0x0000014c       0x34 src/slpctrl.o
+ .debug_frame   0x00000180       0x24 src/tca.o
+ .debug_frame   0x000001a4       0xe4 src/usart_basic.o
+ .debug_frame   0x00000288       0xf8 ws2812b_driver.o
+ .debug_frame   0x00000380       0xa8 ws2812b_driver_basic.o
+ .debug_frame   0x00000428       0x7c ws2812b_driver_interface.o
 
-.debug_str      0x00000000     0x216c
+.debug_str      0x00000000     0x2135
  *(.debug_str)
  .debug_str     0x00000000      0xf85 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega4809/avrxmega3/crtatmega4809.o
  .debug_str     0x00000f85      0x16d atmel_start.o
                                 0x1a1 (size before relaxing)
  .debug_str     0x000010f2      0x21d driver_isr.o
                                 0x3a9 (size before relaxing)
- .debug_str     0x0000130f      0x314 main.o
-                                0x498 (size before relaxing)
- .debug_str     0x00001623       0x16 src/bod.o
+ .debug_str     0x0000130f      0x2e7 main.o
+                                0x45c (size before relaxing)
+ .debug_str     0x000015f6       0x16 src/bod.o
                                 0x18e (size before relaxing)
- .debug_str     0x00001639      0x1c8 src/clkctrl.o
+ .debug_str     0x0000160c      0x1c8 src/clkctrl.o
                                 0x38c (size before relaxing)
- .debug_str     0x00001801       0x1c src/cpuint.o
+ .debug_str     0x000017d4       0x1c src/cpuint.o
                                 0x194 (size before relaxing)
- .debug_str     0x0000181d      0x269 src/driver_init.o
+ .debug_str     0x000017f0      0x27e src/driver_init.o
                                 0x473 (size before relaxing)
- .debug_str     0x00001a86       0xb0 src/slpctrl.o
+ .debug_str     0x00001a6e       0xb0 src/slpctrl.o
                                 0x25a (size before relaxing)
- .debug_str     0x00001b36      0x1bd src/tca.o
+ .debug_str     0x00001b1e      0x1bd src/tca.o
                                 0x54c (size before relaxing)
- .debug_str     0x00001cf3      0x1f9 src/usart_basic.o
+ .debug_str     0x00001cdb      0x1f3 src/usart_basic.o
                                 0x3f8 (size before relaxing)
- .debug_str     0x00001eec       0xb9 ws2812b_driver.o
+ .debug_str     0x00001ece       0xcf ws2812b_driver.o
                                 0x464 (size before relaxing)
- .debug_str     0x00001fa5      0x108 ws2812b_driver_basic.o
+ .debug_str     0x00001f9d       0xd9 ws2812b_driver_basic.o
                                 0x40a (size before relaxing)
- .debug_str     0x000020ad       0xbf ws2812b_driver_interface.o
+ .debug_str     0x00002076       0xbf ws2812b_driver_interface.o
                                 0x3ca (size before relaxing)
 
-.debug_loc      0x00000000      0xf92
+.debug_loc      0x00000000     0x1011
  *(.debug_loc)
  .debug_loc     0x00000000       0x3c driver_isr.o
- .debug_loc     0x0000003c       0x5c main.o
- .debug_loc     0x00000098       0x29 src/clkctrl.o
- .debug_loc     0x000000c1      0x1ad src/driver_init.o
- .debug_loc     0x0000026e       0x21 src/slpctrl.o
- .debug_loc     0x0000028f       0x93 src/usart_basic.o
- .debug_loc     0x00000322      0x7a8 ws2812b_driver.o
- .debug_loc     0x00000aca      0x272 ws2812b_driver_basic.o
- .debug_loc     0x00000d3c      0x256 ws2812b_driver_interface.o
+ .debug_loc     0x0000003c       0xdb main.o
+ .debug_loc     0x00000117       0x29 src/clkctrl.o
+ .debug_loc     0x00000140      0x1ad src/driver_init.o
+ .debug_loc     0x000002ed       0x21 src/slpctrl.o
+ .debug_loc     0x0000030e       0x93 src/usart_basic.o
+ .debug_loc     0x000003a1      0x7a8 ws2812b_driver.o
+ .debug_loc     0x00000b49      0x272 ws2812b_driver_basic.o
+ .debug_loc     0x00000dbb      0x256 ws2812b_driver_interface.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -933,21 +934,21 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x1a8
+.debug_ranges   0x00000000      0x1c0
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 atmel_start.o
  .debug_ranges  0x00000010       0x10 driver_isr.o
- .debug_ranges  0x00000020       0x10 main.o
- .debug_ranges  0x00000030       0x10 src/bod.o
- .debug_ranges  0x00000040       0x10 src/clkctrl.o
- .debug_ranges  0x00000050       0x10 src/cpuint.o
- .debug_ranges  0x00000060       0x28 src/driver_init.o
- .debug_ranges  0x00000088       0x18 src/slpctrl.o
- .debug_ranges  0x000000a0       0x10 src/tca.o
- .debug_ranges  0x000000b0       0x70 src/usart_basic.o
- .debug_ranges  0x00000120       0x38 ws2812b_driver.o
- .debug_ranges  0x00000158       0x28 ws2812b_driver_basic.o
- .debug_ranges  0x00000180       0x28 ws2812b_driver_interface.o
+ .debug_ranges  0x00000020       0x28 main.o
+ .debug_ranges  0x00000048       0x10 src/bod.o
+ .debug_ranges  0x00000058       0x10 src/clkctrl.o
+ .debug_ranges  0x00000068       0x10 src/cpuint.o
+ .debug_ranges  0x00000078       0x28 src/driver_init.o
+ .debug_ranges  0x000000a0       0x18 src/slpctrl.o
+ .debug_ranges  0x000000b8       0x10 src/tca.o
+ .debug_ranges  0x000000c8       0x70 src/usart_basic.o
+ .debug_ranges  0x00000138       0x38 ws2812b_driver.o
+ .debug_ranges  0x00000170       0x28 ws2812b_driver_basic.o
+ .debug_ranges  0x00000198       0x28 ws2812b_driver_interface.o
 
 .debug_macro
  *(.debug_macro)

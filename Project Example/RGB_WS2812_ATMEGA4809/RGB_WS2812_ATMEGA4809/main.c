@@ -2,9 +2,9 @@
 #include "ws2812B_driver_basic.h"
 
 
-#define NUMBER_LED      4
+#define NUMBER_LED      24
 
-const uint8_t colourArray[3] = {0, 152, 152};  /*Red, Green, blue*/
+const uint8_t color[3] = {0, 152, 152};  /*Red, Green, blue*/
 
 int main(void)
 {
@@ -32,14 +32,27 @@ int main(void)
 
 	#endif
 
-	ws2812b_basic_color_t basic_color_array[7] = {WS2812b_COLOR_GREEN, WS2812b_COLOR_BLUE, WS2812b_COLOR_RED, WS2812b_COLOR_YELLOW, WS2812b_COLOR_MAGENTA, WS2812b_COLOR_CYAN, WS2812b_COLOR_WHITE};
+	const uint8_t colorsArray[] = {     WS2812b_COLOR_RED,
+										WS2812b_COLOR_GREEN,
+										WS2812b_COLOR_BLUE,
+										WS2812b_COLOR_YELLOW,
+										WS2812b_COLOR_MAGENTA,
+										WS2812b_COLOR_CYAN,
+										WS2812b_COLOR_WHITE,
+									    WS2812b_COLOR_PURPLE};
 
 	/* Replace with your application code */
 	while (1) {
           
-     LED_BUILTIN_toggle_level();
-	 _delay_ms(250);    
-	  
+//        ws2812b_basic_customized_color(1, color);
+
+		for(int colorIndex = 0; colorIndex < sizeof(colorsArray); colorIndex++){
+			for(int index = 1; index < NUMBER_LED+1; index++){
+				ws2812b_interface_delay_ms(50);
+				ws2812b_basic_write(index, colorsArray[colorIndex]);
+			}
+			ws2812b_interface_delay_ms(50);
+		}
 	}
 	return 1; 
 }
